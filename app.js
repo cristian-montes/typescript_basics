@@ -1,17 +1,13 @@
-//UNION TYPES --> is when the data type can be either or of the two specfied, this will required some extra logic to apply correctly under specific conditions. 
-function combine(input1, input2, resultConvertion) {
-    var result;
-    if (typeof input1 === 'number' && typeof input2 === 'number' || resultConvertion === 'as-number') {
-        result = +input1 + +input2;
-    }
-    else {
-        result = input1.toString() + input2.toString();
-    }
-    return result;
+// This is function with specified types and the type of result does not need to be specified because TS does it by inferance. 
+function addition(n1, n2) {
+    return n1 + n2;
 }
-;
-var combinedAges = combine(34, 16, 'as-number');
-console.log(combinedAges);
-var combinedStringAges = combine('30', '26', 'as-text');
-var combinedNames = combine('Max', 'Ana', 'as-text');
-console.log(combinedNames);
+//This function has its  data type parameters defined and also the expected returned data type since the data type taken in is different to the one giving out.
+// the void data type is when the function is not return any data or data type. 
+function printResulties(num) {
+    console.log('Result: ' + num);
+}
+printResulties(addition(5, 12));
+var combineValue;
+combineValue = addition;
+console.log(combineValue(8, 8));
